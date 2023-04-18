@@ -11,13 +11,13 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.happynomad</groupId>
+    <groupId>io.github.happynomad810</groupId>
     <artifactId>bom</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
-    <name>spring-boot-dependencies</name>
+    <name>happynomad-dependencies</name>
     <description>happynomad's projects Dependencies</description>
-    <url>https://happynomad.com</url>
+    <url>https://github.com/HappyNomad810/bom</url>
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -29,12 +29,41 @@
             <name>HappyNomad</name>
             <email>HappyNomad810@gmail</email>
             <organization>HappyNomad, Inc.</organization>
-            <organizationUrl>https://www.happynomad.com</organizationUrl>
+            <organizationUrl>https://github.com/HappyNomad810</organizationUrl>
         </developer>
     </developers>
     <scm>
         <url>https://github.com/HappyNomad810/bom</url>
     </scm>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
