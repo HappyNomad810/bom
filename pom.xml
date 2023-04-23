@@ -13,7 +13,7 @@
 
     <groupId>io.github.happynomad810</groupId>
     <artifactId>bom</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <packaging>pom</packaging>
     <name>happynomad-dependencies</name>
     <description>happynomad's projects Dependencies</description>
@@ -62,7 +62,27 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
         </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.mybatis.generator</groupId>
+                    <artifactId>mybatis-generator-maven-plugin</artifactId>
+                    <version>1.4.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
     <properties>
@@ -78,6 +98,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-log4j2</artifactId>
+                <version>3.0.5</version>
             </dependency>
             <dependency>
                 <groupId>com.lmax</groupId>
