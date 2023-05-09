@@ -13,7 +13,7 @@
 
     <groupId>io.github.happynomad810</groupId>
     <artifactId>bom</artifactId>
-    <version>1.1.0</version>
+    <version>1.3.0</version>
     <packaging>pom</packaging>
     <name>happynomad-dependencies</name>
     <description>happynomad's projects Dependencies</description>
@@ -65,7 +65,7 @@
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
+                <version>1.6.13</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>ossrh</serverId>
@@ -113,7 +113,19 @@
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>3.0.1</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.dynamic-sql</groupId>
+                <artifactId>mybatis-dynamic-sql</artifactId>
+                <version>1.5.0</version>
+            </dependency>
             <!-- mybatis section end -->
+
+            <dependency>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
+                <version>8.0.33</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
